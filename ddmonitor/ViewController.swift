@@ -16,7 +16,7 @@ class ViewController: NSViewController {
     
     private var playerRoomIDs: [String] = []
     private var gridLayout: [Int] = [2,2]
-    private var globalVolume: Int = 25
+    private var globalVolume: Int = 30
     private var quality: Int = 1
 
     @IBOutlet weak var videoContainer: NSView!
@@ -80,33 +80,25 @@ class ViewController: NSViewController {
         vertStackView.orientation = NSUserInterfaceLayoutOrientation.vertical
         vertStackView.distribution = NSStackView.Distribution.fillEqually
         // Loop player array and set horizontal view
-        for row in 0...3 {
+        for row in 0...totalRow-1 {
             let rowStackView = NSStackView()
             rowStackView.orientation = NSUserInterfaceLayoutOrientation.horizontal
             rowStackView.translatesAutoresizingMaskIntoConstraints = false
             rowStackView.distribution = NSStackView.Distribution.fillEqually
-            if(row > totalRow-1){
-                continue
-            }else{
-                for col in 0..<3{
-                    let idxNum = (row * totalRow) + col
-                    var roomID = "0"
-                    if(idxNum > biliRooms.count - 1){
-                        roomID = "0"
-                    }else{
-                        roomID = biliRooms[idxNum]
-                    }
-                    if(col <= totalCol-1){
-                        DispatchQueue.main.async {
-                            self.playerViewArr[idxNum].setRoomID(biliRoomID: roomID, bitrate_preset: self.quality)
-                        }
-                        rowStackView.addView(self.playerViewArr[idxNum].view, in: NSStackView.Gravity.leading)
-                    }else{
-                        self.playerViewArr[idxNum].stop()
-                    }
+            for col in 0...totalCol-1{
+                let idxNum = (row * totalRow) + col
+                var roomID = "0"
+                if(idxNum > biliRooms.count - 1){
+                    roomID = "0"
+                }else{
+                    roomID = biliRooms[idxNum]
                 }
-                vertStackView.addView(rowStackView, in: NSStackView.Gravity.leading)
+                DispatchQueue.main.async {
+                    self.playerViewArr[idxNum].setRoomID(biliRoomID: roomID, bitrate_preset: self.quality)
+                }
+                rowStackView.addView(self.playerViewArr[idxNum].view, in: NSStackView.Gravity.leading)
             }
+            vertStackView.addView(rowStackView, in: NSStackView.Gravity.leading)
         }
         // set stack view in container and set anchor
         self.videoStackView = vertStackView
