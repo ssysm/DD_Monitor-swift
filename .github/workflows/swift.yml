@@ -1,0 +1,17 @@
+name: Swift
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and test
+      run: xcodebuild clean test -project ddmonitor.xcodeproj -scheme ddmonitor CODE_SIGNING_REQUIRED=NO
