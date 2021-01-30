@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RoomInputComponent" customModule="ddmonitor" customModuleProvider="target">
+            <connections>
+                <outlet property="playerRoomID" destination="BW3-th-6q2" id="opJ-Cz-e3w"/>
+                <outlet property="playerText" destination="J7G-yQ-27C" id="FiS-Zs-Fwa"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="285" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-th-6q2">
+                    <rect key="frame" x="78" y="30" width="187" height="20"/>
+                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="U1U-EE-iS3">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J7G-yQ-27C">
+                    <rect key="frame" x="18" y="32" width="54" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="播放器0" id="GBf-lL-Dk4">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="BW3-th-6q2" firstAttribute="leading" secondItem="J7G-yQ-27C" secondAttribute="trailing" constant="8" symbolic="YES" id="5Oi-eH-tCH"/>
+                <constraint firstItem="BW3-th-6q2" firstAttribute="centerY" secondItem="J7G-yQ-27C" secondAttribute="centerY" id="6bv-o9-eea"/>
+                <constraint firstAttribute="trailing" secondItem="BW3-th-6q2" secondAttribute="trailing" constant="20" symbolic="YES" id="7JG-zr-5VD"/>
+                <constraint firstItem="J7G-yQ-27C" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="32" id="QoW-A0-eWc"/>
+                <constraint firstItem="J7G-yQ-27C" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="YjE-yc-Rmi"/>
+                <constraint firstItem="BW3-th-6q2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="30" id="b7A-RX-vzf"/>
+                <constraint firstItem="J7G-yQ-27C" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="mVI-dn-gH1"/>
+            </constraints>
+            <point key="canvasLocation" x="-251.5" y="-8"/>
+        </customView>
+    </objects>
+</document>

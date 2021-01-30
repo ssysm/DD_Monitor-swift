@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RoomSettingVC" customModule="ddmonitor" customModuleProvider="target">
+            <connections>
+                <outlet property="inputContainer" destination="A5W-dS-ePS" id="d2S-Eb-0GS"/>
+                <outlet property="inputViewContainer" destination="A5W-dS-ePS" id="Rga-UG-lm0"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="395"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3YZ-MJ-sX3" userLabel="Action Container">
+                    <rect key="frame" x="381" y="20" width="163" height="96"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gnm-oi-kQW">
+                            <rect key="frame" x="88" y="13" width="62" height="32"/>
+                            <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7zz-iE-vRq">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" usesAppearanceFont="YES"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="handleDismiss:" target="-2" id="MxX-pk-7G5"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-M1-boQ">
+                            <rect key="frame" x="13" y="13" width="62" height="32"/>
+                            <buttonCell key="cell" type="push" title="确认" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tBl-0P-yvO">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" usesAppearanceFont="YES"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="handleApply:" target="-2" id="pqj-hL-zFf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="tpd-M1-boQ" secondAttribute="bottom" constant="20" symbolic="YES" id="6ru-PG-afy"/>
+                        <constraint firstItem="tpd-M1-boQ" firstAttribute="leading" secondItem="3YZ-MJ-sX3" secondAttribute="leading" constant="20" symbolic="YES" id="BMq-e8-hwx"/>
+                        <constraint firstItem="tpd-M1-boQ" firstAttribute="baseline" secondItem="gnm-oi-kQW" secondAttribute="baseline" id="BfY-fR-uWD"/>
+                        <constraint firstAttribute="trailing" secondItem="gnm-oi-kQW" secondAttribute="trailing" constant="20" symbolic="YES" id="OlP-rl-xk7"/>
+                        <constraint firstItem="gnm-oi-kQW" firstAttribute="leading" secondItem="tpd-M1-boQ" secondAttribute="trailing" constant="27" id="PRK-wc-aFH"/>
+                        <constraint firstItem="tpd-M1-boQ" firstAttribute="top" secondItem="3YZ-MJ-sX3" secondAttribute="top" constant="56" id="Tvf-ml-Bs3"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="A5W-dS-ePS" userLabel="Input Container">
+                    <rect key="frame" x="20" y="124" width="524" height="251"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="A5W-dS-ePS" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="2BE-KB-XFC"/>
+                <constraint firstAttribute="bottom" secondItem="3YZ-MJ-sX3" secondAttribute="bottom" constant="20" symbolic="YES" id="5f0-3i-6Xv"/>
+                <constraint firstItem="A5W-dS-ePS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="ADu-0R-Yot"/>
+                <constraint firstItem="3YZ-MJ-sX3" firstAttribute="top" secondItem="A5W-dS-ePS" secondAttribute="bottom" constant="8" symbolic="YES" id="N1e-wH-P1b"/>
+                <constraint firstItem="A5W-dS-ePS" firstAttribute="trailing" secondItem="3YZ-MJ-sX3" secondAttribute="trailing" id="bXS-li-dPf"/>
+                <constraint firstAttribute="trailing" secondItem="A5W-dS-ePS" secondAttribute="trailing" constant="20" symbolic="YES" id="vtY-Ko-RFP"/>
+            </constraints>
+            <point key="canvasLocation" x="-58" y="108.5"/>
+        </customView>
+    </objects>
+</document>

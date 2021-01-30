@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PlayerVC" customModule="ddmonitor" customModuleProvider="target">
+            <connections>
+                <outlet property="infoLoadingIndicator" destination="w2V-zD-A08" id="kdK-gB-pkf"/>
+                <outlet property="infoLoadingText" destination="uCj-EB-BQw" id="iTg-Cf-pOB"/>
+                <outlet property="loadingView" destination="0Xm-L5-8a6" id="wIX-rI-onc"/>
+                <outlet property="player" destination="FP2-mG-QlE" id="wln-NX-5Jt"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0Xm-L5-8a6">
+                    <rect key="frame" x="155" y="88" width="170" height="96"/>
+                    <subviews>
+                        <progressIndicator maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="w2V-zD-A08">
+                            <rect key="frame" x="65" y="44" width="39" height="32"/>
+                        </progressIndicator>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uCj-EB-BQw">
+                            <rect key="frame" x="62" y="20" width="44" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="加载中" id="dLd-y1-fMo">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uCj-EB-BQw" firstAttribute="leading" secondItem="0Xm-L5-8a6" secondAttribute="leading" constant="64" id="3rC-dn-giN"/>
+                        <constraint firstItem="uCj-EB-BQw" firstAttribute="top" secondItem="w2V-zD-A08" secondAttribute="bottom" constant="8" symbolic="YES" id="4HR-e1-zdN"/>
+                        <constraint firstAttribute="bottom" secondItem="uCj-EB-BQw" secondAttribute="bottom" constant="20" symbolic="YES" id="5Tw-fP-p5g"/>
+                        <constraint firstAttribute="trailing" secondItem="w2V-zD-A08" secondAttribute="trailing" constant="66" id="AlG-PL-WDx"/>
+                        <constraint firstItem="w2V-zD-A08" firstAttribute="leading" secondItem="0Xm-L5-8a6" secondAttribute="leading" constant="65" id="ijx-l3-4A8"/>
+                        <constraint firstItem="w2V-zD-A08" firstAttribute="top" secondItem="0Xm-L5-8a6" secondAttribute="top" constant="20" symbolic="YES" id="lMb-9e-swm"/>
+                        <constraint firstAttribute="trailing" secondItem="uCj-EB-BQw" secondAttribute="trailing" constant="66" id="tgd-Vy-dzd"/>
+                    </constraints>
+                </customView>
+                <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="FP2-mG-QlE">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                </avPlayerView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0Xm-L5-8a6" firstAttribute="centerX" secondItem="FP2-mG-QlE" secondAttribute="centerX" id="9Ob-C1-Mhh"/>
+                <constraint firstItem="0Xm-L5-8a6" firstAttribute="centerY" secondItem="FP2-mG-QlE" secondAttribute="centerY" id="DJf-bM-N2b"/>
+                <constraint firstAttribute="trailing" secondItem="FP2-mG-QlE" secondAttribute="trailing" id="M8w-Jj-rR1"/>
+                <constraint firstAttribute="bottom" secondItem="FP2-mG-QlE" secondAttribute="bottom" id="Nsw-fZ-y3N"/>
+                <constraint firstItem="FP2-mG-QlE" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="oPR-9J-IpE"/>
+                <constraint firstItem="FP2-mG-QlE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="u0b-Kh-QAh"/>
+            </constraints>
+            <point key="canvasLocation" x="-39" y="154"/>
+        </customView>
+    </objects>
+</document>
